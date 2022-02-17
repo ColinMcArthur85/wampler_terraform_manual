@@ -5,8 +5,8 @@
 
 /* RESETS */
 * {
-  margin: 0;
-  padding: 0;
+  box-sizing: border-box;
+  margin-top: 0;
 }
 *,
 *::before,
@@ -19,6 +19,12 @@ body {
   color: #1c0d43;
 }
 p {
+  font-family: Quantico;
+  font-weight: 400;
+  line-height: 1.5;
+}
+span {
+  display: block;
   font-family: Quantico;
   font-weight: 400;
   line-height: 1.5;
@@ -39,7 +45,8 @@ h3 {
   font-family: Days One, sans-serif;
   font-size: 1.5em;
   text-transform: uppercase;
-  margin-bottom: 1em;
+  margin-bottom: 0.75em;
+  text-decoration: underline;
 }
 h4 {
   font-family: Days One, sans-serif;
@@ -59,14 +66,15 @@ h5 a {
 }
 img {
   width: 100%;
+  margin-bottom: 0.75em;
 }
 ul {
   font-family: Quantico;
   list-style-type: square;
-  margin-left: 40px;
 }
 li {
-  padding-left: 2em;
+  padding-left: 1em;
+  font-family: Quantico;
 }
 a {
   text-decoration: none;
@@ -94,42 +102,41 @@ a:active {
   height: 100%;
   /*   border: 1px red solid; */
 }
-#list-of-effects h3 {
-  text-decoration: underline;
+#intro {
+  margin-top: 0.75em;
 }
-
+#bypass > p {
+  margin-bottom: 0;
+}
 /* CONTAINERS */
 .flex-container {
   display: flex;
-  flex-direction: row;
   max-width: 90vw;
   margin: 0 auto;
   /* border: 1px solid red; */
 }
 
 .half-container {
-  padding: 1.5em;
+  padding: 0em 1em;
   width: 100%;
   /* border: 1px solid red; */
 }
+
 .nav-container {
   display: flex;
   flex-direction: column;
   margin: 1em 0 0 1em;
   /* border: 1px red solid; */
 }
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-bottom: 0.75em;
+}
 
 /* Skips the parent element and selects just the children */
 .flow > * + * {
   margin-bottom: 1em;
-}
-
-/* BEGIN CLASSES */
-.toc-top-item {
-  display: flex;
-  justify-content: space-between;
-  /*   margin: 0px 15px 0px 100px; */
-  border-bottom: 1px solid black;
 }
 
 /* MEDIA QUERIES */
@@ -147,8 +154,11 @@ a:active {
   main {
     margin: 0 auto;
   }
+  h2 {
+    text-align: center;
+  }
   #toc-mobile {
-    display: none;
+    display: block;
   }
 }
 
